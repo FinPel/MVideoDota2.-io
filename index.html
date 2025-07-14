@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Турнир Dota 2 x М.Видео–Эльдорадо</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-btns">
+      <button class="register-btn" id="register-btn">Зарегистрироваться</button>
+      <button class="stream-btn" id="stream-btn">Смотреть трансляцию</button>
+      <button class="channel-btn" id="channel-btn">Канал</button>
+    </div>
+  </header>
+  <nav>
+    <a id="open-tournament">Турнирная таблица</a>
+    <a id="open-rules">Правила</a>
+    <a id="open-sponsor">Спонсор</a>
+    <a id="open-schedule">Расписание</a>
+  </nav>
+  <div class="bottom-bg">
+    <div class="bottom-text">
+      Добро пожаловать на главный киберспортивный турнир года для сотрудников М.Видео–Эльдорадо!<br>
+      Это твой шанс проявить командный дух, стратегическое мышление и любовь к Dota 2.<br>
+      Сразись с коллегами, пройди групповой этап и докажи, что именно ваша команда достойна титула сильнейшей!<br>
+      Побеждай, вдохновляй и стань частью легенды!
+    </div>
+  </div>
+  <!-- Модальное окно: Турнирная таблица -->
+  <div class="modal-overlay" id="modal-tournament" role="dialog" aria-modal="true" aria-labelledby="tournament-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="tournament-title">Турнирная таблица</h2>
+      <div class="playoff" style="flex-direction: column; align-items: stretch;">
+        <div class="groups-container">
+          <!-- Группа A -->
+          <div class="group-table">
+            <h3>Группа A</h3>
+            <div class="team-row">
+              <span class="team-place">1</span>
+              <span class="team-info">
+                <span class="team-logo"><img src="images/Эгоист.jpg" alt="Egoist"></span>
+                <span class="team-name">Egoist</span>
+              </span>
+              <span class="team-points">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-place">2</span>
+              <span class="team-info">
+                <span class="team-logo"><img src="images/горила.jpg" alt="Gorilla Energy"></span>
+                <span class="team-name">Gorilla Energy</span>
+              </span>
+              <span class="team-points">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-place">3</span>
+              <span class="team-info">
+                <span class="team-logo"><img src="images/Ананас.jpg" alt="SiberianАнанас"></span>
+                <span class="team-name">SiberianАнанас</span>
+              </span>
+              <span class="team-points">0</span>
+            </div>
+          </div>
+          <!-- Группа B -->
+          <div class="group-table">
+            <h3>Группа B</h3>
+            <div class="team-row">
+              <span class="team-place">1</span>
+              <span class="team-info">
+                <span class="team-logo"><img src="images/Пиво.jpg" alt="BEER BROTHERHOOD"></span>
+                <span class="team-name">BEER BROTHERHOOD</span>
+              </span>
+              <span class="team-points">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-place">2</span>
+              <span class="team-info">
+                <span class="team-logo"><img src="images/Виктори.jpg" alt="All for victory"></span>
+                <span class="team-name">All for victory</span>
+              </span>
+              <span class="team-points">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-place">3</span>
+              <span class="team-info">
+                <span class="team-logo"><img src="images/макнагетс.jpg" alt="All for victory"></span>
+                <span class="team-name">макнагетс</span>
+              </span>
+              <span class="team-points">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="final-label">Плей-офф</div>
+        <div class="playoff-bracket">
+          <div class="round">
+            <div class="match">
+              <div class="team-match">1 место Группа A</div>
+              <div class="team-match">2 место Группа B</div>
+            </div>
+            <div class="match">
+              <div class="team-match">1 место Группа B</div>
+              <div class="team-match">2 место Группа A</div>
+            </div>
+          </div>
+          <div class="round">
+            <div class="match winner-match">Победитель полуфинала 1</div>
+            <div class="match winner-match">Победитель полуфинала 2</div>
+          </div>
+          <div class="round">
+            <div class="match final-match">Финал</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Модальное окно: Правила -->
+  <div class="modal-overlay" id="modal-rules" role="dialog" aria-modal="true" aria-labelledby="rules-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="rules-title">Правила турнира</h2>
+      <div class="rules-section">
+        <ul>
+          <li>К участию допускаются только сотрудники сети М.Видео–Эльдорадо (МВМ).</li>
+          <li>Каждая команда состоит из 5 игроков.</li>
+          <li>Все матчи проходят в формате Best of 3.</li>
+          <li>За победу 2:0 начисляется 3 очка</li>
+          <li>За победу 2:1 начисляется 2 очка</li>
+          <li>За проигрыш 2:1 начисляется 1 очко</li>
+          <li>За проигрыш 2:0 начисляется 0 очков</li>
+          <li>Уважайте соперников и соблюдайте принципы честной игры.</li>
+          <li>Организаторы оставляют за собой право вносить изменения в регламент.</li>
+        </ul>
+        <p>Докажи, что именно твоя команда достойна победы!</p>
+      </div>
+    </div>
+  </div>
+  <!-- Модальное окно: Спонсор -->
+  <div class="modal-overlay" id="modal-sponsor" role="dialog" aria-modal="true" aria-labelledby="sponsor-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="sponsor-title">Официальный спонсор</h2>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+          <img src="https://cdn1.ozonusercontent.com/s3/product-service-meta-media/0dd9d6ec-95fb-4d9e-9cd7-38b49e4f1718.jpg" alt="Carrera" />
+        </div>
+        <p>
+          Благодарим компанию Carrera за поддержку нашего турнира и предоставление призов для победителей!
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Модальное окно: Расписание -->
+  <div class="modal-overlay" id="modal-schedule" role="dialog" aria-modal="true" aria-labelledby="schedule-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="schedule-title">Расписание матчей</h2>
+      <div class="schedule-section">
+        <h3>Групповой этап (15.07 – 20.07)</h3>
+        <ul class="schedule-list">
+          <li><strong>15.07</strong> — Gorilla Energy VS SiberianАнанас в 23:00</li>
+          <li><strong>16.07</strong> — All for victory VS BEER BROTHERHOOD в 23:00</li>
+          <li><strong>17.07</strong> — Egoist VS Gorilla Energy в 23:00</li>
+          <li><strong>18.07</strong> — макнагетс VS All for victory в 23:00</li>
+          <li><strong>19.07</strong> — SiberianАнанас VS Egoist в 23:00</li>
+          <li><strong>20.07</strong> — BEER BROTHERHOOD VS макнагетс в 23:00</li>
+        </ul>
+        <h3>Плей-офф</h3>
+        <ul class="schedule-list">
+          <li><strong>21.07</strong> — Первый полуфинал в 23:00</li>
+          <li><strong>22.07</strong> — Второй полуфинал в 23:00</li>
+          <li><strong>23.07</strong> — Финал в 23:00</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    const modalTournament = document.getElementById('modal-tournament');
+    const modalSponsor = document.getElementById('modal-sponsor');
+    const modalRules = document.getElementById('modal-rules');
+    const modalSchedule = document.getElementById('modal-schedule');
+
+    document.getElementById('open-tournament').addEventListener('click', () => {
+      modalTournament.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalTournament.querySelector('.modal').focus();
+    });
+    document.getElementById('open-sponsor').addEventListener('click', () => {
+      modalSponsor.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalSponsor.querySelector('.modal').focus();
+    });
+    document.getElementById('open-rules').addEventListener('click', () => {
+      modalRules.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalRules.querySelector('.modal').focus();
+    });
+    document.getElementById('open-schedule').addEventListener('click', () => {
+      modalSchedule.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalSchedule.querySelector('.modal').focus();
+    });
+
+    const closeButtons = document.querySelectorAll('.close-btn');
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalOverlay = btn.closest('.modal-overlay');
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    });
+
+    [modalTournament, modalSponsor, modalRules, modalSchedule].forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        [modalTournament, modalSponsor, modalRules, modalSchedule].forEach(modal => {
+          if (modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+
+    document.getElementById('register-btn').addEventListener('click', function() {
+      window.open('https://t.me/MVideoDota2_bot', '_blank');
+    });
+    document.getElementById('stream-btn').addEventListener('click', function() {
+      window.open('https://www.twitch.tv/black__style?sr=a', '_blank'); 
+    });
+    document.getElementById('channel-btn').addEventListener('click', function() {
+      window.open('https://t.me/dota2mvideokemerovo', '_blank'); 
+    });
+  </script>
+</body>
+</html>

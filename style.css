@@ -1,0 +1,550 @@
+/* style.css */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1);}
+  50% { transform: scale(1.03);}
+}
+@keyframes buttonGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(255,255,255,0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px 4px rgba(255,255,255,1);
+    transform: scale(1.05);
+  }
+}
+body {
+  background: linear-gradient(135deg, #2c0404 0%, #7c2323 100%);
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  height: 70vh;
+  position: relative;
+  background: url('Шапка.jpg') no-repeat center center/contain;
+  border-bottom: 5px solid #d7263d;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 40px 30px 40px;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44,4,4,0.6);
+  z-index: 0;
+}
+.header-btns {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+.register-btn {
+  position: relative;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 16px 48px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #d7263d 0%, #ff4a4a 100%);
+  color: white;
+  border: 3px solid #ff0000;
+  cursor: pointer;
+  box-shadow: 0 10px 35px #d7263daa;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+  user-select: none;
+  text-shadow: 0 0 8px #ff0000;
+  letter-spacing: 0.05em;
+}
+.register-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px #ff0000cc;
+  border-color: #ff4a4a;
+  background: linear-gradient(90deg, #ff0000 0%, #ff7373 100%);
+}
+.stream-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 14px 36px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #7b2ff2 0%, #f357ff 100%);
+  color: #fff;
+  border: 3px solid #7b2ff2;
+  cursor: pointer;
+  box-shadow: 0 8px 28px #7b2ff299;
+  margin-bottom: 0;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px #7b2ff2;
+  letter-spacing: 0.04em;
+  animation: buttonGlow 3s ease-in-out infinite;
+}
+.stream-btn:hover {
+  background: linear-gradient(90deg, #a259f7 0%, #c471ed 100%);
+  border-color: #a259f7;
+  transform: translateY(-4px) scale(1.04);
+}
+.channel-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 14px 36px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  border: 3px solid #007bff;
+  cursor: pointer;
+  box-shadow: 0 8px 28px #007bff99;
+  margin-bottom: 0;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px #007bff;
+  letter-spacing: 0.04em;
+  animation: buttonGlow 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.channel-btn:hover {
+  background: linear-gradient(90deg, #005bea 0%, #3ec6e0 100%);
+  border-color: #005bea;
+  transform: translateY(-4px) scale(1.04);
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  margin: 30px 0;
+  animation: fadeIn 1s ease-out;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+}
+nav a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 8px 24px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid transparent;
+}
+nav a:hover {
+  background: #d7263d;
+  color: #fff;
+  border-color: #ff4a4a;
+  transform: translateY(-3px);
+}
+.bottom-bg {
+  position: relative;
+  background: url('https://img.championat.com/s/1350x900/news/big/e/k/pgl-arlington-major-2022-po-dota-2-raspisanie-pyatogo-dnya-i-pryamye-translyacii_1659970205841999375.jpg') no-repeat center center/cover;
+  height: 65vh;
+  box-shadow: inset 0 0 60px 20px rgba(44,4,4,0.8);
+  width: 100%;
+  flex-shrink: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+}
+.bottom-text {
+  max-width: 900px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #ffd6d6;
+  text-align: center;
+  line-height: 1.6;
+  padding: 30px 40px;
+  background: rgba(124, 35, 35, 0.75);
+  border: 3px solid #ff0000;
+  border-radius: 20px;
+  text-shadow:
+    -2px -2px 3px #7c0000,
+    2px -2px 3px #7c0000,
+    -2px 2px 3px #7c0000,
+    2px 2px 3px #7c0000;
+  user-select: none;
+  animation: fadeIn 2s ease forwards;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease forwards;
+  padding: 20px;
+}
+.modal {
+  background: linear-gradient(135deg, #7c2323 0%, #ff0000 100%);
+  border: 3px solid #d7263d;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px #d7263d88;
+  max-width: 1000px;
+  width: 90vw;
+  max-height: 95vh;
+  overflow-y: auto;
+  padding: 40px 36px;
+  color: #fff;
+  animation: fadeIn 0.5s ease-out;
+  position: relative;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.modal h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  text-shadow: 0 2px 8px #8b0000;
+  font-weight: 700;
+  border: 2px solid #d7263d;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 2rem;
+}
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  background: #d7263d;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  line-height: 36px;
+  text-align: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+.close-btn:hover {
+  background: #ff0000;
+}
+/* Турнирная таблица: группы */
+.groups-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 38px;
+  flex-wrap: wrap;
+}
+.group-table {
+  background: linear-gradient(135deg, #3a0202 0%, #d7263d 100%);
+  border: 3px solid #ff0000;
+  border-radius: 16px;
+  padding: 22px 18px;
+  min-width: 280px;
+  max-width: 350px;
+  flex: 1 1 300px;
+  box-shadow: 0 4px 18px #d7263d66;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+}
+.group-table h3 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #ffd6d6;
+  text-shadow: 0 2px 6px #7c2323;
+}
+.team-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 1.1rem;
+}
+.team-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  border: 2px solid #fff;
+  background: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-logo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.team-info {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.team-place {
+  font-weight: bold;
+  color: #ffd6d6;
+  margin-right: 18px;
+  min-width: 24px;
+  text-align: center;
+}
+.team-name {
+  font-weight: 600;
+  color: #fff;
+  margin-right: 10px;
+  font-size: 1.08rem;
+}
+.team-points {
+  font-weight: bold;
+  color: #ffbaba;
+  font-size: 1.08rem;
+  min-width: 28px;
+  text-align: right;
+}
+/* Плей-офф сетка */
+.playoff-bracket {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.round {
+  flex: 0 0 280px;
+  margin: 0 12px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.match {
+  background: #d7263d;
+  color: #fff;
+  margin: 24px 0;
+  padding: 20px 16px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #ff0000;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+.match:hover {
+  background: #ff0000;
+  color: #fff;
+  transform: scale(1.05);
+}
+.team-match {
+  margin: 6px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+/* Финальный матч выделен */
+.final-match {
+  font-size: 1.4rem;
+  padding: 28px 20px;
+  border-color: #ffd6d6;
+  background: linear-gradient(135deg, #7c2323 0%, #ff7373 100%);
+  box-shadow: 0 0 18px #ffd6d6;
+}
+/* Спонсор */
+.sponsor-logo {
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #d7263d33;
+  text-align: center;
+  border: 3px solid #d7263d;
+  font-family: 'Montserrat', sans-serif;
+}
+.sponsor-logo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.sponsor p {
+  margin-top: 28px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid #d7263d;
+  border-radius: 12px;
+  padding: 16px 22px;
+  background: linear-gradient(90deg, #7c1c1c, #d7263d);
+  box-shadow: 0 0 10px #d7263daa;
+}
+/* Правила */
+.rules-section {
+  background: linear-gradient(90deg, #ff0000 0%, #d7263d 100%);
+  color: #fff;
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 14px;
+  padding: 36px 40px;
+  font-size: 1.35rem;
+  box-shadow: 0 4px 24px #381e1c44;
+  text-align: center;
+  font-weight: 600;
+  animation: fadeIn 1.4s ease-out;
+  position: relative;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  font-family: 'Roboto', sans-serif;
+  border: 3px solid #d7263d;
+}
+.rules-section ul {
+  text-align: left;
+  padding-left: 28px;
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.rules-section ul li {
+  margin-bottom: 16px;
+}
+.rules-section p {
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-top: 2px solid #d7263d;
+  padding-top: 16px;
+}
+/* Расписание */
+.schedule-section {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+.schedule-section h3 {
+  text-align: center;
+  color: #ffd6d6;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 6px #7c2323;
+}
+.schedule-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+.schedule-list li {
+  background: rgba(255,255,255,0.08);
+  margin: 6px 0;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  border: 1.5px solid #d7263d;
+  box-shadow: 0 0 8px #d7263d88;
+  user-select: none;
+}
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .modal {
+    max-width: 98vw;
+    width: 98vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 24px 8px;
+  }
+}
+@media (max-width: 1000px) {
+  .groups-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .group-table {
+    max-width: 98vw;
+    width: 98vw;
+  }
+}
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+  .header-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .register-btn, .stream-btn, .channel-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .bottom-text {
+    font-size: 1.3rem;
+    max-width: 90vw;
+    padding: 20px 25px;
+  }
+  .modal {
+    max-width: 99vw;
+    width: 99vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 18px 4px;
+  }
+}
+@media (max-width: 700px) {
+  .register-btn, .stream-btn, .channel-btn {
+    font-size: 1rem;
+    padding: 10px 28px;
+  }
+  .bottom-text {
+    font-size: 1.1rem;
+    padding: 16px 18px;
+  }
+  .modal {
+    max-width: 100vw;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 8px 2px;
+  }
+}
